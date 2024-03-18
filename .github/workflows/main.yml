@@ -1,0 +1,19 @@
+name: Triggered Workflow with Parameter
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder_name:
+        description: 'Folder Name'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Use folder name parameter
+        run: |
+          echo "Folder Name: ${{ github.event.inputs.folder_name }}"
