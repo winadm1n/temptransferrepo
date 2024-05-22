@@ -27,7 +27,7 @@ jobs:
           touch sample.txt
           echo "==========================================================" >> sample.txt
           echo "Folder Name: ${{ github.event.inputs.folder_name }}" >> sample.txt
-          echo "hello lokesh this is in cat" >> sample.txt
+          echo "hello lokesh this is overwrite test" >> sample.txt
           echo "==========================================================" >> sample.txt
           cat sample.txt
           git config user.email "winadm1n@protonmail.com"
