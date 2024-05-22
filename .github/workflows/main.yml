@@ -12,8 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
       
       - name: Use folder name parameter
         run: |
           echo "Folder Name: ${{ github.event.inputs.folder_name }}"
+          pwd
+          ls -a
+          mkdir image_folder
+          touch sample.txt
+          echo "Folder Name: ${{ github.event.inputs.folder_name }}" >> sample.txt
+          git add .
+          git commit -m "Move files to new folder"
+          git push origin main 
