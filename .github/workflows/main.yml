@@ -23,6 +23,7 @@ jobs:
           pwd
           ls -a
           mkdir image_folder
+          cd image_folder
           touch sample.txt
           echo "==========================================================" >> sample.txt
           echo "Folder Name: ${{ github.event.inputs.folder_name }}" >> sample.txt
