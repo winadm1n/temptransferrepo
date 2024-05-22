@@ -23,7 +23,13 @@ jobs:
           ls -a
           mkdir image_folder
           touch sample.txt
+          echo "==========================================================" >> sample.txt
           echo "Folder Name: ${{ github.event.inputs.folder_name }}" >> sample.txt
+          echo "hello lokesh this is in cat" >> sample.txt
+          echo "==========================================================" >> sample.txt
+          cat sample.txt
+          git config user.email "winadm1n@protonmail.com"
+          git config user.name "winadm1n"
           git add .
           git commit -m "Move files to new folder"
           git push origin main 
